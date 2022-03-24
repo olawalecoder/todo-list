@@ -8,7 +8,6 @@ const addListBtn = document.querySelector('#add');
 const listContainer = document.querySelector('.list');
 const localStorage = storageManager.getData();
 const ulManager = new UserInterface(listContainer, localStorage);
-const addList = new Todolist(localStorage);
 
 function component() {
   const element = document.createElement('div');

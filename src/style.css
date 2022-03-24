@@ -6,7 +6,7 @@ body {
   background-color: rgb(240, 238, 238);
 }
 
-today-container {
+.today-container {
   border-bottom: 1px solid lightgray;
   display: flex;
   gap: 1rem;
