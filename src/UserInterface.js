@@ -24,7 +24,7 @@ export default class UserInterface {
     }
     return li;
   }
-  
+
   refreshUI() {
     this.todoList = storageManager.getData();
     while (this.showToDoElement.firstChild) {
