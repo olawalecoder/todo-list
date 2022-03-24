@@ -1,5 +1,3 @@
-
-
 export default class userInterface {
   constructor(listElement, listObj) {
     this.showToDoElement = listElement;
