@@ -4,6 +4,7 @@ html * {
 
 body {
   background-color: rgb(240, 238, 238);
+  font-size: 20px;
 }
 
 .today-container {
@@ -78,7 +79,7 @@ body {
   position: absolute;
   left: 40%;
   transform: translate(-30%, -30%);
-  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 5px;
   padding-left: 0;
   margin: 15rem 0;
 }
@@ -142,7 +143,7 @@ body {
   transition: 100ms ease;
 }
 
-#delete-to-do:active {
+#delete-task:active {
   transform: rotate(720deg);
   transition: 100ms ease;
 }
@@ -168,4 +169,8 @@ body {
   outline: 0 solid transparent;
   padding-right: 3%;
   padding-right: 2%;
+}
+
+.markDelete {
+  background-color: bisque;
 }
