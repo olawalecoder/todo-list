@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('./font2.woff2') format('woff2'),
+    url('./font1.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  background-color: bisque;
+}
+
+.hello {
+  color: red;
+  font-family: 'Font';
+  background: url('./icon.png');
+}
