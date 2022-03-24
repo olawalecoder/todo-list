@@ -1,7 +1,7 @@
 {
-  "name": "webpack-demo",
+  "name": "todo-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "This app helps users to organize and add tasks efficiently. It allows users paln their and manage their pending tasks",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Olawale Bamidele",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.1",

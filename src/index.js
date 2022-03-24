@@ -1,26 +1,32 @@
 import _ from 'lodash';
 import './style.css';
-import Icon from './icon.png';
-import Data from './data.xml';
-import Notes from './data.csv';
+import userInterface from './userInterface.js';
+import storageManager from './storage.js'
+
+const listText = document.querySelector('.input-task');
+const addListBtn = document.querySelector('#add');
+const listContainer = document.querySelector('.list');
+const localStorage = storageManager.getData();
+const ulManager = new userInterface(listContainer, localStorage);
+const addList = new todolist(localStorage);
 
 function component() {
   const element = document.createElement('div');
 
- // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-    // Add the image to our existing div.
-    const myIcon = new Image();
-    myIcon.src = Icon;
-  
-    element.appendChild(myIcon);
-
-    console.log(Data);
-    console.log(Notes);
+  // Lodash, now imported by this script
+  element.innerHTML = _;
 
   return element;
 }
 
 document.body.appendChild(component());
+
+function addToList() {
+  if (listText.value !== '') {
+    addList.add(listText.value);
+    ulManager.refreshUI();
+    listText.value = '';
+  }
+};
+addListBtn.addEventListener('click', addToList);
+window.onresize = ulManager.refreshUI();
