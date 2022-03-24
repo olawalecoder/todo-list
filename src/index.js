@@ -1,14 +1,14 @@
 import _ from 'lodash';
 import './style.css';
-import userInterface from './userInterface.js';
-import storageManager from './storage.js'
+import UserInterface from './UserInterface.js';
+import storageManager from './storage.js';
 
 const listText = document.querySelector('.input-task');
 const addListBtn = document.querySelector('#add');
 const listContainer = document.querySelector('.list');
 const localStorage = storageManager.getData();
-const ulManager = new userInterface(listContainer, localStorage);
-const addList = new todolist(localStorage);
+const ulManager = new UserInterface(listContainer, localStorage);
+const addList = new Todolist(localStorage);
 
 function component() {
   const element = document.createElement('div');
@@ -27,6 +27,6 @@ function addToList() {
     ulManager.refreshUI();
     listText.value = '';
   }
-};
+}
 addListBtn.addEventListener('click', addToList);
 window.onresize = ulManager.refreshUI();

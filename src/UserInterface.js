@@ -11,7 +11,7 @@ export default class userInterface {
     li.classList.add('item');
     if (!empty) {
       li.innerHTML = `<input type="checkbox" id="${todo.index}" class="task-box">
-                        <span id="task-${todo.index}" contenteditable='false' class= "task-description"> ${todo.description} </span>`
-      };
+                        <span id="task-${todo.index}" contenteditable='false' class= "task-description"> ${todo.description} </span>`;
     };
   };
+}
