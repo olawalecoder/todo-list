@@ -1,6 +1,6 @@
 import storageManager from './Storage.js';
 
-export default class userInterface {
+export default class UserInterface {
   constructor(listElement, listObj) {
     this.showToDoElement = listElement;
     this.todoList = listObj;
@@ -24,6 +24,7 @@ export default class userInterface {
     }
     return li;
   }
+  
   refreshUI() {
     this.todoList = storageManager.getData();
     while (this.showToDoElement.firstChild) {
