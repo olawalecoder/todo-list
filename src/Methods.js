@@ -56,4 +56,4 @@ export default class Methods {
     const ulManager = new UserInterface(listContainer, storageManager.getData());
     ulManager.refreshUI();
   }
-} 
+}
