@@ -12,20 +12,22 @@ export default class Todolist {
     storageManager.storeData(todoList);
   }
 
-  static remove(itemsToDelete) {
-    let todoList = storageManager.getData();
-    itemsToDelete.forEach((index) => {
-      todoList = todoList.filter((todo) => todo.index !== Number(index));
-    });
-    Todolist.updateToDoItemIndex(todoList);
-  }
-
-  static updateToDoItemIndex(todoList) {
-    let i = 0;
-    const { length } = todoList;
-    for (i; i < length; i += 1) {
-      todoList[i].index = i + 1;
+  static remove = (itemsToDelete, clear = false) => {
+    let todoList = StorageManager.getData();
+    if (!clear) {
+      itemsToDelete.forEach((index) => {
+        todoList = todoList.filter((todo) => todo.index !== Number(index));
+      });
+    } else {
+      todoList = todoList.filter((todo) => todo.completed !== true);
     }
-    storageManager.storeData(todoList);
-  }
+    Todolist.updateToDoItemIndex(todoList);
+  };
+
+  static updateToDoItemIndex = (todoList) => {
+    todoList.forEach((todo, index) => {
+      todo.index = index + 1;
+    });
+    StorageManager.storeData(todoList);
+  };
 }

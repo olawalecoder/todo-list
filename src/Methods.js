@@ -38,11 +38,11 @@ export default class Methods {
     this.toogle = true;
   }
 
-  addListenerForRemove(deleteBtn, listContainer) {
+  addListenerForRemove(deleteBtn) {
     deleteBtn.addEventListener('click', () => {
       Todolist.remove(this.itemsToDelete);
       this.itemsToDelete.length = 0;
-      Methods.uIRefreshInstance(listContainer);
+      UserInterface.refreshUI();
     });
   }
 
@@ -56,4 +56,4 @@ export default class Methods {
     const ulManager = new UserInterface(listContainer, storageManager.getData());
     ulManager.refreshUI();
   }
-}
+} 

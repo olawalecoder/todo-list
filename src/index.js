@@ -9,15 +9,13 @@ const listText = document.querySelector('.input-task');
 const addListBtn = document.querySelector('#add');
 const listContainer = document.querySelector('.list');
 const localStorage = storageManager.getData();
+
 const ulManager = new UserInterface(listContainer, localStorage);
 const Method = new Methods();
 
 function component() {
   const element = document.createElement('div');
-
-  // Lodash, now imported by this script
   element.innerHTML = _;
-
   return element;
 }
 
@@ -28,7 +26,9 @@ function addToList() {
     listText.value = '';
   }
 }
+
 addListBtn.addEventListener('click', addToList);
+
 listContainer.addEventListener('click', (e) => {
   if (e.target.tagName === 'LI') {
     const listId = e.target.children[0].id;
@@ -37,3 +37,4 @@ listContainer.addEventListener('click', (e) => {
 });
 
 document.body.appendChild(component());
+window.onresize = ulManager.refreshUI();
