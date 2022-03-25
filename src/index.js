@@ -1,39 +1,18 @@
-import _ from 'lodash';
 import './style.css';
-import UserInterface from './UserInterface.js';
-import Todolist from './Todolist.js';
-import storageManager from './Storage.js';
-import Methods from './Methods.js';
+import render from './todosRender.js';
+import Todos from './todos.js';
 
-const listText = document.querySelector('.input-task');
-const addListBtn = document.querySelector('#add');
-const listContainer = document.querySelector('.list');
-const localStorage = storageManager.getData();
-const ulManager = new UserInterface(listContainer, localStorage);
-const Method = new Methods();
+const todosList = new Todos();
+render(todosList);
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _;
-
-  return element;
-}
-
-function addToList() {
-  if (listText.value !== '') {
-    Todolist.add(listText.value);
-    ulManager.refreshUI();
-    listText.value = '';
-  }
-}
-addListBtn.addEventListener('click', addToList);
-listContainer.addEventListener('click', (e) => {
-  if (e.target.tagName === 'LI') {
-    const listId = e.target.children[0].id;
-    Method.markListForChanges(e.originalTarget, listId, listContainer);
+const addTodoBtn = document.querySelector('.add-btn');
+addTodoBtn.addEventListener('click', () => {
+  const description = document.querySelector('.input-todo').value.trim();
+  const completed = false;
+  const index = todosList.list.length + 1;
+  const newTodo = { description, completed, index };
+  if (description) {
+    todosList.addTodo(newTodo);
+    render(todosList);
   }
 });
-
-document.body.appendChild(component());
