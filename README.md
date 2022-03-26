@@ -5,7 +5,7 @@
 This app helps users to organize and add tasks efficiently. It allows users paln their and manage their pending tasks.
 
 ## Preview
-![Preview](./src/screenshot-todo-list.png)
+![Preview](./todo-list.png)
 
 Elements of the user interface are fully functional(The create, delete, filter, drag and drop functions). Users will be able to check the taks they have completed and also clear them.
 
