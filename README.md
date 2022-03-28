@@ -21,7 +21,7 @@ Elements of the user interface are fully functional(The create, delete, filter, 
 
 ## DEMO
 
-[LIVE DEMO LINK](https://olawalecoder.github.io/todo-list/)
+[LIVE DEMO LINK]()
 
 ## Getting Started
 
